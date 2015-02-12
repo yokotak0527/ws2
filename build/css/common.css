@@ -1,0 +1,49 @@
+/*
+Error: Invalid property: "back:" (no value).
+        on line 5 of /Users/yokotakenji/Desktop/totori/src/sass/common.sass
+
+1: @import "module/variables"
+2: @import "compass"
+3: 
+4: a
+5: 	back :
+
+Backtrace:
+/Users/yokotakenji/Desktop/totori/src/sass/common.sass:5
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:719:in `parse_property'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:681:in `parse_property_or_rule'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:647:in `parse_line'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:525:in `build_tree'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:544:in `block in append_children'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:543:in `each'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:543:in `append_children'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:534:in `block in build_tree'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:527:in `each'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:527:in `build_tree'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:544:in `block in append_children'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:543:in `each'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:543:in `append_children'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:396:in `_to_tree'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/engine.rb:268:in `render'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/plugin/compiler.rb:491:in `update_stylesheet'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/sass-3.4.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/lib/compass/sass_compiler.rb:40:in `compile!'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/lib/compass/commands/update_project.rb:49:in `perform'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/lib/compass/commands/base.rb:18:in `execute'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/bin/compass:30:in `block in <top (required)>'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/bin/compass:44:in `call'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/gems/compass-1.0.1/bin/compass:44:in `<top (required)>'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/bin/compass:23:in `load'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/bin/compass:23:in `<main>'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/bin/ruby_executable_hooks:15:in `eval'
+/Users/yokotakenji/.rvm/gems/ruby-2.1.3/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid property: \"back:\" (no value).\A         on line 5 of /Users/yokotakenji/Desktop/totori/src/sass/common.sass\A \A 1: @import \"module/variables\"\A 2: @import \"compass\"\A 3: \A 4: a\A 5: 	back :"; }
