@@ -1,21 +1,23 @@
-gulp         = require 'gulp'
-compass      = require 'gulp-compass'    #
-coffee       = require 'gulp-coffee'     #
-pleeease     = require 'gulp-pleeease'   # CSS便利ツール
-plumber      = require 'gulp-plumber'    # 監視の停止を防ぐ
-notify       = require 'gulp-notify'     # 通知
-changed      = require 'gulp-changed'    # 変更されたファイルだけストリームに出す
-cached       = require 'gulp-cached'     # キャッシュ
-sourcemaps   = require 'gulp-sourcemaps' # ソースマップ出力
-getConfig    = require './config'
+gulp              = require 'gulp'
+compass           = require 'gulp-compass'    #
+coffee            = require 'gulp-coffee'     #
+pleeease          = require 'gulp-pleeease'   # CSS便利ツール
+plumber           = require 'gulp-plumber'    # 監視の停止を防ぐ
+notify            = require 'gulp-notify'     # 通知
+changed           = require 'gulp-changed'    # 変更されたファイルだけストリームに出す
+cached            = require 'gulp-cached'     # キャッシュ
+sourcemaps        = require 'gulp-sourcemaps' # ソースマップ出力
+getConfig         = require './config'
 
-srcPath      = getConfig 'srcPath'
-buildPath    = getConfig 'buildPath'
-useFlg       = getConfig 'useFlg'
-compassConf  = getConfig 'compassConf'
-pleeeaseConf = getConfig 'pleeeaseConf'
-coffeeConf   = getConfig 'coffeeConf'
-notifyConf   = getConfig 'notifyConf'
+srcPath           = getConfig 'srcPath'
+relativeSrcPath   = getConfig 'relativeSrcPath'
+buildPath         = getConfig 'buildPath'
+relativeBuildPath = getConfig 'relativeBuildPath'
+useFlg            = getConfig 'useFlg'
+compassConf       = getConfig 'compassConf'
+pleeeaseConf      = getConfig 'pleeeaseConf'
+coffeeConf        = getConfig 'coffeeConf'
+notifyConf        = getConfig 'notifyConf'
 
 # ==============================================================================
 # タスク
@@ -23,6 +25,7 @@ notifyConf   = getConfig 'notifyConf'
 # Sass
 # ------------------------------------------------------------------------------
 sassBuild = (e,type)->
+	_stream = undefined
 	# Compassの設定
 	_compassConf =
 		'comments'    : true
@@ -37,10 +40,10 @@ sassBuild = (e,type)->
 	# --------------------------------------------------------------------------
 	switch type
 		when 'sass'
-			_compassConf.sass = srcPath.sass
+			_compassConf.sass = relativeSrcPath.sass
 			gulp
 				.src(_compassConf.sass + '**/*.sass')
-				.pipe(changed(buildPath.css))
+				.pipe(changed(relativeBuildPath.css))
 				.pipe(plumber({errorHandler : notify.onError(
 					title   : 'Sass Build Error'
 					message : '<%= error.message %>'
@@ -50,7 +53,7 @@ sassBuild = (e,type)->
 				.pipe(pleeease(_pleeeaseConf))
 				.pipe(gulp.dest(buildPath.css))
 		when 'scss'
-			_compassConf.sass = srcPath.scss
+			_compassConf.sass = relativeSrcPath.scss
 			gulp
 				.src(_compassConf.sass + '**/*.scss')
 				.pipe(changed(buildPath.css))
@@ -99,14 +102,11 @@ coffeeBuild = (e)->
 # ==============================================================================
 gulp.task 'watch',->
 	if useFlg.sass
-		gulp.watch srcPath.sass+'/**/*.sass',(e)->
+		gulp.watch srcPath.sass + '/**/*.sass',(e)->
 			sassBuild e,'sass'
-			return
-		gulp.watch srcPath.scss+'/**/*.scss',(e)->
+		gulp.watch srcPath.scss + '/**/*.scss',(e)->
 			sassBuild e,'scss'
-			return
 	if useFlg.coffee
-		gulp.watch srcPath.coffee+'/**/*.coffee',(e)->
+		gulp.watch srcPath.coffee + '/**/*.coffee',(e)->
 			coffeeBuild e
-			return
 	return

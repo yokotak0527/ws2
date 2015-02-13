@@ -1,7 +1,8 @@
 .DS_Store
-src/bower_components/
-src/node_modules/
-src/temp/
-src/.cache/
-src/.sass-cache/
-src/usr/*
+**/bower_components/
+**/node_modules/
+**/temp/
+**/.cache/
+**/.sass-cache/
+**/usr/*
+**/npm-debug.log

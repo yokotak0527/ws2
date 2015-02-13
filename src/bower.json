@@ -1,0 +1,16 @@
+{
+  "name": "ws2",
+  "version": "0.0.5",
+  "authors": [
+    "Yokota Kenji <mail@yokotakenji.me>"
+  ],
+  "description": "requisite libraries",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "dependencies": {
+    "jquery-1.11.2": "http://code.jquery.com/jquery-1.11.2.min.js",
+    "velocity": "~1.2.1"
+  }
+}
